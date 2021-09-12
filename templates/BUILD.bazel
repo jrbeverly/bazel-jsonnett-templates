@@ -1,0 +1,10 @@
+load(
+    "@io_bazel_rules_jsonnet//jsonnet:jsonnet.bzl",
+    "jsonnet_library",
+)
+
+jsonnet_library(
+    name = "templates",
+    srcs = glob(["*.libsonnet"]),
+    visibility = ["//visibility:public"],
+)
