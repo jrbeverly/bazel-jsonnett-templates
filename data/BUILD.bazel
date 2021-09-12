@@ -1,0 +1,11 @@
+load("//templates:defs.bzl", "json_combine", "data_entries")
+
+json_combine(
+    name = "combined_json",
+    srcs = glob(["**/*.json"]),
+)
+
+data_entries(
+    prefix = "data",
+    srcs = glob(["**/*.jsonnet"])
+)
