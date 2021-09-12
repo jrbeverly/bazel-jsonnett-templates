@@ -1,0 +1,24 @@
+load(
+    "@io_bazel_rules_jsonnet//jsonnet:jsonnet.bzl",
+    "jsonnet_library",
+)
+
+package(default_visibility = ["//visibility:public"])
+
+jsonnet_library(
+    name = "api",
+    srcs = glob(["api/**/*.libsonnet"]),
+)
+
+jsonnet_library(
+    name = "blueprint",
+    srcs = glob(["blueprint/**/*.libsonnet"]),
+)
+
+jsonnet_library(
+    name = "lib",
+    deps = [
+        ":blueprint",
+        ":api",
+    ],
+)
